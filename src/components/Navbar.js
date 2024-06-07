@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <Box
       display="flex"
-      justifyContent="space-around"
+      justifyContent="start"
       alignItems="center"
       p={2}
       bgcolor="secondary.main"

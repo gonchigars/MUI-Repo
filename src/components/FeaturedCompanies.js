@@ -1,18 +1,18 @@
 import React from "react";
-import { Grid, Paper, Typography, Box } from "@mui/material";
+import { Grid, Paper, Typography, Box ,Link } from "@mui/material";
 
 const companies = [
-  { name: "Aurora Solar", logo: require("../images/aurora.png") },
-  { name: "NYSE: BLND", logo: require("../images/blend.png") },
-  { name: "NYSE: DOMA", logo: require("../images/doma.png") },
-  { name: "Flyhomes", logo: require("../images/flyhomes.png") },
+  { name: "ADIDAS", logo: require("../images/ADIDAS.png") },
+  { name: "INTEL", logo: require("../images/INTL.png") },
+  { name: "HYUNDAI", logo: require("../images/Hyundi.jpeg") },
+  { name: "SAMSUMG", logo: require("../images/samsung.png") },
 ];
 
 const FeaturedCompanies = () => {
   return (
-    <Box p={4} bgcolor="#f8f8f8">
-      <Typography variant="h6" gutterBottom>
-        Featured
+    <Box p={6} bgcolor="aquamarine">
+      <Typography  fontSize ="150%" variant="overline" gutterBottom>
+       <b >  Featured</b>
       </Typography>
       <Grid container spacing={3}>
         {companies.map((company) => (
@@ -26,9 +26,12 @@ const FeaturedCompanies = () => {
                 src={company.logo}
                 alt={company.name}
                 width="100%"
-                height="100px"
+                height="110px"
               />
               <Typography variant="subtitle1" gutterBottom>
+              
+
+           
                 {company.name}
               </Typography>
             </Paper>

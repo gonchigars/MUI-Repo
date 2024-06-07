@@ -5,6 +5,8 @@ import MainContent from "./components/MainContent";
 import FeaturedCompanies from "./components/FeaturedCompanies";
 import Pagination from "./components/Pagination";
 import { Grid, Box } from "@mui/material";
+import Footer from "./components/Footer";
+
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Grid item xs={12}>
             <Pagination />
           </Grid>
+         <Footer/>
+        
         </Grid>
       </Box>
     </div>

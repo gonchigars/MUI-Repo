@@ -1,59 +1,59 @@
 import React from "react";
 import { Box, Container, Typography, Link, Grid } from "@mui/material";
 
+
 function Footer() {
   return (
     <Box
       sx={{
-        backgroundColor: "primary.dark",
-        color: "white",
-        padding: "16px 0",
+        backgroundColor: "aliceblue",
+        color: "black",
+        width: 1200,
+        height: 140,   
         marginTop: "auto",
       }}
     >
-      <Container maxWidth="lg">
-        <Grid container spacing={2}>
+     <Container maxWidth="lg">
+      
+        <Grid container spacing={34}>
           <Grid item xs={4}>
             <Typography variant="h6">Contact</Typography>
             <Typography variant="body2">Careers</Typography>
-            <Link href="#" color="inherit">
-              LinkedIn
+            <Link href="https://www.linkedin.com/in/charan-m-032381211?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" color="inherit">
+              LinkedIn <br></br>
+
             </Link>
-            <Link href="#" color="inherit">
-              Twitter
+            
+            <Link href="https://www.youtube.com/channel/UCc-TU93NofwBMiAXJ-HdXrg" color="inherit">
+              YouTube<br></br>
             </Link>
-            <Link href="#" color="inherit">
-              YouTube
+            <Link href="https://www.instagram.com/_c_h_a_r_a_n_20?igsh=ZWJya2lwZTNjMQ==" color="inherit">
+              Instagram<br></br>
             </Link>
-            <Link href="#" color="inherit">
-              Instagram
-            </Link>
-            <Link href="#" color="inherit">
-              Facebook
-            </Link>
+            
           </Grid>
           <Grid item xs={4}>
-            <Typography variant="h6">Fifth Wall's Weekly Newsletter</Typography>
+            <Typography variant="inherit">CRX's Weekly Newsletter</Typography>
             <Link href="#" color="inherit">
               Sign Up
             </Link>
           </Grid>
           <Grid item xs={4}>
-            <Typography variant="body2">&copy; 2024 Fifth Wall</Typography>
+            <Typography variant="body2">&copy; 2024 CRX</Typography>
             <Link href="#" color="inherit">
-              Investor Login
+              Investor Login <br></br>
             </Link>
             <Link href="#" color="inherit">
-              Sitemap
+              Sitemap<br></br>
             </Link>
             <Link href="#" color="inherit">
-              Terms of Use
+              Terms of Use<br></br>
             </Link>
             <Link href="#" color="inherit">
-              Privacy Policy
+              Privacy Policy<br></br>
             </Link>
             <Link href="#" color="inherit">
-              Disclosures
+              Disclosures<br></br>
             </Link>
           </Grid>
         </Grid>

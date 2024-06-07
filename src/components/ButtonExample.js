@@ -11,7 +11,7 @@ const ButtonExample = () => {
         <Button variant="contained">Button 2</Button>
       </Grid>
       <Grid item xs={12} sm={6} md={4}>
-        <Button variant="contained">Button 3</Button>
+        <Button variant="text">Button 3</Button>
       </Grid>
     </Grid>
   );
