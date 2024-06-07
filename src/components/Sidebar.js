@@ -9,14 +9,14 @@ const Sidebar = () => {
   return (
     <Box
       sx={{
-        width: 240,
+        width: 190,
         height: "100vh",
-        backgroundColor: "primary.main",
+        backgroundColor: "DarkBlue",
         color: "white",
         position: "fixed",
         top: 0,
         left: 0,
-        paddingTop: "64px", // Adjust to the height of your header
+        paddingTop: "50px", // Adjust to the height of your header
       }}
     >
       <List>

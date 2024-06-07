@@ -2,17 +2,17 @@ import React from "react";
 import { Grid, Paper, Typography, Box } from "@mui/material";
 
 const companies = [
-  { name: "Aurora Solar", logo: require("../images/aurora.png") },
-  { name: "NYSE: BLND", logo: require("../images/blend.png") },
-  { name: "NYSE: DOMA", logo: require("../images/doma.png") },
-  { name: "Flyhomes", logo: require("../images/flyhomes.png") },
+  { name: "LG", logo: require("../images/LG.png") },
+  { name: "PANASONIC", logo: require("../images/Panasonic.jpg") },
+  { name: "BLUE STAR", logo: require("../images/blue-star.png") },
+  { name: "LLOYD", logo: require("../images/Lloyd.jpg") },
 ];
 
 const FeaturedCompanies = () => {
   return (
     <Box p={4} bgcolor="#f8f8f8">
       <Typography variant="h6" gutterBottom>
-        Featured
+        Available AC Brands
       </Typography>
       <Grid container spacing={3}>
         {companies.map((company) => (
