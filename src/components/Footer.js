@@ -9,6 +9,8 @@ function Footer() {
         color: "white",
         padding: "16px 0",
         marginTop: "auto",
+        marginLeft: "0px",
+        marginRight: "0px",
       }}
     >
       <Container maxWidth="lg">
@@ -16,7 +18,7 @@ function Footer() {
           <Grid item xs={4}>
             <Typography variant="h6">Contact</Typography>
             <Typography variant="body2">Careers</Typography>
-            <Link href="#" color="inherit">
+            <Link href="#" color="inherit" padding="10px" >
               LinkedIn
             </Link>
             <Link href="#" color="inherit">
@@ -32,9 +34,9 @@ function Footer() {
               Facebook
             </Link>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={4} padding="10px">
             <Typography variant="h6">Fifth Wall's Weekly Newsletter</Typography>
-            <Link href="#" color="inherit">
+            <Link href="#" color="inherit" padding="10px">
               Sign Up
             </Link>
           </Grid>
@@ -58,7 +60,9 @@ function Footer() {
           </Grid>
         </Grid>
       </Container>
+
     </Box>
+    
   );
 }
 

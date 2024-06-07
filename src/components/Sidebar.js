@@ -9,7 +9,7 @@ const Sidebar = () => {
   return (
     <Box
       sx={{
-        width: 240,
+        width: 140,
         height: "100vh",
         backgroundColor: "primary.main",
         color: "white",
