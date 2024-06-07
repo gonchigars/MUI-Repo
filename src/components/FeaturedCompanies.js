@@ -10,8 +10,31 @@ const companies = [
 
 const FeaturedCompanies = () => {
   return (
-    <Box p={4} bgcolor="#f8f8f8">
-      <Typography variant="h6" gutterBottom>
+    <Box>
+      <Typography
+        variant="h6"
+        sx={{
+          fontSize: "18px",
+          fontWeight: 600,
+          color: "primary.main",
+          paddingLeft: "10px",
+          marginBottom: "20px",
+          textTransform: "capitalize",
+          position: "relative",
+          "&::after": {
+            content: '""',
+            backgroundColor: "third.lite",
+            position: "absolute",
+            top: "0px",
+            bottom: "0px",
+            left: "-5px",
+            height: "100%",
+            width: "5px",
+            borderRadius: "40px",
+          },
+        }}
+        gutterBottom
+      >
         Featured
       </Typography>
       <Grid container spacing={3}>
@@ -19,7 +42,7 @@ const FeaturedCompanies = () => {
           <Grid item xs={12} sm={6} md={3} key={company.name}>
             <Paper
               elevation={3}
-              style={{ padding: "16px", textAlign: "center" }}
+              style={{ padding: "14px", textAlign: "center" }}
             >
               <Box
                 component="img"
@@ -27,8 +50,13 @@ const FeaturedCompanies = () => {
                 alt={company.name}
                 width="100%"
                 height="100px"
+                sx={{ objectFit: "contain" }}
               />
-              <Typography variant="subtitle1" gutterBottom>
+              <Typography
+                variant="subtitle"
+                sx={{ fontSize: "14px", color: "third.main" }}
+                gutterBottom
+              >
                 {company.name}
               </Typography>
             </Paper>
