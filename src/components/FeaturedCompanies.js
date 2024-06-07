@@ -27,6 +27,7 @@ const FeaturedCompanies = () => {
                 alt={company.name}
                 width="100%"
                 height="100px"
+               
               />
               <Typography variant="subtitle1" gutterBottom>
                 {company.name}

@@ -7,7 +7,7 @@ const Navbar = () => {
       display="flex"
       justifyContent="space-around"
       alignItems="center"
-      p={2}
+      p={20}
       bgcolor="secondary.main"
       color="white"
     >
