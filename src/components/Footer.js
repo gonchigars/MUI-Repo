@@ -6,30 +6,30 @@ function Footer() {
     <Box
       sx={{
         backgroundColor: "primary.dark",
-        color: "white",
-        padding: "16px 0",
+        color: "black",
+        padding: "0px",
         marginTop: "auto",
       }}
     >
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={4}>
-            <Typography variant="h6">Contact</Typography>
+            <Typography variant="h5">Contact</Typography>
             <Typography variant="body2">Careers</Typography>
             <Link href="#" color="inherit">
               LinkedIn
             </Link>
             <Link href="#" color="inherit">
-              Twitter
+              <p>Twitter</p>
             </Link>
             <Link href="#" color="inherit">
-              YouTube
+              <p>YouTube</p>
             </Link>
             <Link href="#" color="inherit">
-              Instagram
+              <p>Instagram</p>
             </Link>
             <Link href="#" color="inherit">
-              Facebook
+              <p>Facebook</p>
             </Link>
           </Grid>
           <Grid item xs={4}>
@@ -44,13 +44,13 @@ function Footer() {
               Investor Login
             </Link>
             <Link href="#" color="inherit">
-              Sitemap
+              <p>Sitemap</p>
             </Link>
             <Link href="#" color="inherit">
-              Terms of Use
+              <p>Terms of Use</p>
             </Link>
             <Link href="#" color="inherit">
-              Privacy Policy
+              <p>Privacy Policy</p>
             </Link>
             <Link href="#" color="inherit">
               Disclosures

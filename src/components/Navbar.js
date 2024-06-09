@@ -9,7 +9,7 @@ const Navbar = () => {
       alignItems="center"
       p={2}
       bgcolor="secondary.main"
-      color="white"
+      color="black"
     >
       <Button color="inherit">Home</Button>
       <Button color="inherit">About</Button>

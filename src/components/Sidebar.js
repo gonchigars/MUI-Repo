@@ -11,36 +11,36 @@ const Sidebar = () => {
       sx={{
         width: 240,
         height: "100vh",
-        backgroundColor: "primary.main",
-        color: "white",
+        backgroundColor: "primary.light",
+        color: "black",
         position: "fixed",
-        top: 0,
+        top: 64,
         left: 0,
-        paddingTop: "64px", // Adjust to the height of your header
+        paddingTop: "10px", // Adjust to the height of your header
       }}
     >
       <List>
         <ListItem button>
           <ListItemIcon>
-            <HomeIcon sx={{ color: "white" }} />
+            <HomeIcon sx={{ color: "darkred" }} />
           </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <InfoIcon sx={{ color: "white" }} />
+            <InfoIcon sx={{ color: "darkred" }} />
           </ListItemIcon>
           <ListItemText primary="About" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <WorkIcon sx={{ color: "white" }} />
+            <WorkIcon sx={{ color: "darkred" }} />
           </ListItemIcon>
           <ListItemText primary="Services" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <ContactMailIcon sx={{ color: "white" }} />
+            <ContactMailIcon sx={{ color: "darkred" }} />
           </ListItemIcon>
           <ListItemText primary="Contact" />
         </ListItem>
