@@ -11,36 +11,54 @@ const Sidebar = () => {
       sx={{
         width: 190,
         height: "100vh",
-        backgroundColor: "DarkBlue",
-        color: "white",
+        backgroundColor: "white",
+        color: "black",
         position: "fixed",
-        top: 0,
+        top: 40,
         left: 0,
-        paddingTop: "50px", // Adjust to the height of your header
+        paddingTop: "70px", // Adjust to the height of your header
       }}
     >
       <List>
-        <ListItem button>
+        <ListItem button
+        sx={{
+          "&:hover":{
+            background:'blue'
+          }
+        }}
+        >
           <ListItemIcon>
-            <HomeIcon sx={{ color: "white" }} />
+            <HomeIcon sx={{ blockSize:30, color: "black" }} />
           </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem button>
+        <ListItem button  sx={{
+          "&:hover":{
+            background:'blue'
+          }
+        }}>
           <ListItemIcon>
-            <InfoIcon sx={{ color: "white" }} />
+            <InfoIcon sx={{ color: "black" }} />
           </ListItemIcon>
-          <ListItemText primary="About" />
+          <ListItemText  primary="About" />
         </ListItem>
-        <ListItem button>
+        <ListItem button  sx={{
+          "&:hover":{
+            background:'blue'
+          }
+        }}>
           <ListItemIcon>
-            <WorkIcon sx={{ color: "white" }} />
+            <WorkIcon sx={{ color: "black" }} />
           </ListItemIcon>
           <ListItemText primary="Services" />
         </ListItem>
-        <ListItem button>
+        <ListItem button  sx={{
+          "&:hover":{
+            background:'blue'
+          }
+        }}>
           <ListItemIcon>
-            <ContactMailIcon sx={{ color: "white" }} />
+            <ContactMailIcon sx={{ color: "black" }} />
           </ListItemIcon>
           <ListItemText primary="Contact" />
         </ListItem>

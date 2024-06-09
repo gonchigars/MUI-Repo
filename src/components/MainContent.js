@@ -3,7 +3,7 @@ import { Box, Typography, Grid, Paper, Rating } from "@mui/material";
 
 const MainContent = () => {
   return (
-    <Box p={6}>
+    <Box sx={{paddingTop:10}}p={6}>
       <Typography variant="h4" gutterBottom>
         We back visionary companies that are changing the way we live, work, and
         play.

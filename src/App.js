@@ -6,6 +6,8 @@ import FeaturedCompanies from "./components/FeaturedCompanies";
 import Pagination from "./components/Pagination";
 import { Grid, Box } from "@mui/material";
 import Footer from "./components/Footer";
+import ContentEx from "./components/Content";
+import BrandList from "./components/ImageGrid";
 
 function App() {
   return (
@@ -16,9 +18,13 @@ function App() {
         <Grid container spacing={4}>
         <Grid item xs={12}>
             <MainContent />
+            <ContentEx/>
           </Grid>
-        <Grid item xs={12}>
+          <Grid item xs={12}>
             <FeaturedCompanies />
+          </Grid>
+          <Grid item xs={12}>
+           <BrandList/>
           </Grid>
           <Grid item xs={12}>
             <Pagination />

@@ -5,7 +5,7 @@ function Footer() {
   return (
     <Box
       sx={{
-        backgroundColor: "primary.dark",
+        backgroundColor: "#1E90FF",
         color: "white",
         padding: "16px 0",
         marginTop: "auto",
@@ -40,19 +40,19 @@ function Footer() {
             </Link>
           </Grid>
           <Grid item xs={4}>
-            <Typography variant="body2">&copy; 2024 STAR VISION</Typography>
+            <Typography variant="body1">&copy; 2024 STAR VISION</Typography>
             <Link href="#" color="inherit">
               Investor Login
-            </Link>
+            </Link><br/>
             <Link href="#" color="inherit">
               Sitemap
-            </Link>
+            </Link><br/>
             <Link href="#" color="inherit">
               Terms of Use
-            </Link>
+            </Link><br/>
             <Link href="#" color="inherit">
               Privacy Policy
-            </Link>
+            </Link><br/>
             <Link href="#" color="inherit">
               Disclosures
             </Link>
