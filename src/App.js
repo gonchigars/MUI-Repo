@@ -5,6 +5,8 @@ import MainContent from "./components/MainContent";
 import FeaturedCompanies from "./components/FeaturedCompanies";
 import Pagination from "./components/Pagination";
 import { Grid, Box } from "@mui/material";
+import Footer from "./components/Footer";
+
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
             <Pagination />
           </Grid>
         </Grid>
+        <Footer/>
       </Box>
+      
     </div>
   );
 }
