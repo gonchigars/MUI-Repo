@@ -10,8 +10,9 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App">
-      <Header />
       <Sidebar />
+      <Header />
+      
       <Box sx={{ marginLeft: "240px", padding: 3 }}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
