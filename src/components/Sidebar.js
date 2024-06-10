@@ -11,7 +11,7 @@ const Sidebar = () => {
       sx={{
         width: 240,
         height: "100vh",
-        backgroundColor: "primary.main",
+        backgroundColor: "secondary.dark",
         color: "white",
         position: "fixed",
         top: 0,

@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 
 function Header() {
   return (
-    <AppBar position="static">
+    <AppBar position="static" color = "primary">
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           FIFTH WALL
