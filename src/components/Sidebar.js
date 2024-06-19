@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
@@ -9,45 +9,61 @@ import WorkIcon from "@mui/icons-material/Work";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 
 import { styled, useTheme } from "@mui/material/styles";
+import { useDispatch, useSelector } from "react-redux";
+import { getGenres, setSelectedGenre } from "../state/movieSlice";
 
 const Sidebar = ({ handleDrawerClose, DrawerHeader }) => {
+  const [genresList, setGenres] = useState([]);
+  const dispatch = useDispatch();
+  const { genres } = useSelector((state) => state.movieSlice);
   const theme = useTheme();
+
+  useEffect(() => {
+    dispatch(getGenres());
+  }, []);
+
+  useEffect(() => {
+    genres && setGenres(genres);
+  }, [genres]);
 
   return (
     <Box>
       <DrawerHeader></DrawerHeader>
       {/* <Divider /> */}
       <List>
-        {[
-          { text: "Home", MuiIcons: HomeIcon },
-          { text: "About", MuiIcons: InfoIcon },
-          { text: "Services", MuiIcons: WorkIcon },
-          { text: "Contact", MuiIcons: ContactMailIcon },
-        ].map(({ text, MuiIcons }, index) => (
-          <ListItem
-            sx={{
-              "&:hover & .MuiSvgIcon-root": {
-                color: "primary.main",
-              },
-            }}
-            key={text}
-            disablePadding
-          >
-            <ListItemButton
+        {genresList &&
+          genresList?.map(({ name, id }, index) => (
+            <ListItem
+              onClick={() => {
+                dispatch(setSelectedGenre(id));
+                handleDrawerClose();
+              }}
               sx={{
-                textAlign: { xs: "center", md: "left" },
-                "&:hover": {
+                "&:hover & .MuiSvgIcon-root": {
                   color: "primary.main",
                 },
               }}
+              key={name}
+              disablePadding
             >
-              <ListItemIcon>
+              <ListItemButton
+                sx={{
+                  textAlign: { xs: "center", md: "right" },
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                }}
+              >
+                {/* <ListItemIcon>
                 <MuiIcons />
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+              </ListItemIcon> */}
+                <ListItemText
+                  sx={{ paddingRight: "20px", fontSize: "14px" }}
+                  primary={name}
+                />
+              </ListItemButton>
+            </ListItem>
+          ))}
       </List>
     </Box>
   );

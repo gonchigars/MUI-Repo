@@ -4,8 +4,9 @@ import IconButton from "@mui/material/IconButton";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { useMediaQuery, useTheme } from "@mui/material";
 
-import { AppBar, Toolbar, Typography, Button, Link, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Link, Button, Box } from "@mui/material";
 import { Image } from "@mui/icons-material";
+// import { Link as RRDLink } from "react-router-dom";
 
 const Header = ({ handleDrawerOpen, handleDrawerClose, open }) => {
   // const theme = useTheme();
@@ -15,15 +16,15 @@ const Header = ({ handleDrawerOpen, handleDrawerClose, open }) => {
     cursor: "pointer",
     fontSize: "13px",
     textDecoration: "none",
-    color: "secondary.main",
+    color: "primary.main",
     position: "relative",
     paddingBottom: "5px",
     "&:hover": {
-      color: "third.main",
+      color: "primary.main",
     },
     "&::after": {
       content: '""',
-      backgroundColor: "third.lite",
+      backgroundColor: "primary.main",
       position: "absolute",
       right: "0px",
       bottom: "0px",
@@ -38,14 +39,22 @@ const Header = ({ handleDrawerOpen, handleDrawerClose, open }) => {
     },
   };
   return (
-    <Toolbar sx={{ display: "flex", alignItems: "center" }}>
+    <Toolbar
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        background: "white",
+        color: "primary.main",
+        // boxShadow: "5px 0px 10px gray",
+      }}
+    >
       <IconButton
         color="inherit"
         aria-label="open drawer"
         onClick={handleDrawerOpen}
         edge="start"
         sx={{
-          mr: 2,
+          mr: 0,
           ...(open && { display: "none" }),
         }}
       >
@@ -57,23 +66,25 @@ const Header = ({ handleDrawerOpen, handleDrawerClose, open }) => {
         onClick={handleDrawerClose}
         edge="start"
         sx={{
-          mr: 2,
+          mr: 0,
           ...(!open && { display: "none" }),
         }}
       >
         <CancelIcon />
       </IconButton>
       <Box sx={{ color: "white" }} variant="h6" sx={{ flexGrow: 1 }}>
-        <Box
-          sx={{ display: "flex", alignItems: "center" }}
-          component={"img"}
-          src={
-            "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?w=248&fit=crop&auto=format"
-          }
-          width="auto"
-          height="30px"
-          alt="logo"
-        ></Box>
+        <Link>
+          <Box
+            sx={{ display: "flex", alignItems: "center" }}
+            component={"img"}
+            src={
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS56_C0-3tNNAHTAWWfRE7vniYzYiFhVq8iMb9qK2UbkG0aKE9alsLQZ2sYp_89wO6F5ss&usqp=CAU"
+            }
+            width="auto"
+            height="50px"
+            alt="logo"
+          ></Box>
+        </Link>
       </Box>
       <Box
         style={{ display: lessthan767 ? "none" : "flex" }}

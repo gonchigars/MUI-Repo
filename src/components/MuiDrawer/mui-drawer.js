@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -10,6 +10,7 @@ import Header from "../Header";
 
 import Sidebar from "../Sidebar";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -62,11 +63,11 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export const MuiDrawer = ({ children }) => {
+export const MuiDrawer = ({ children, handleOpen }) => {
   const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
   const matches = useMediaQuery(theme.breakpoints.up("md"));
   const [anchor, setAnchor] = React.useState("bottom");
-  const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
     if (matches) {
@@ -80,9 +81,13 @@ export const MuiDrawer = ({ children }) => {
   };
 
   const handleDrawerClose = () => {
+    console.log("handleDrawerClose");
     setOpen(false);
   };
 
+  useEffect(() => {
+    handleOpen(open);
+  }, [open]);
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -95,9 +100,9 @@ export const MuiDrawer = ({ children }) => {
       </AppBar>
 
       <Drawer
+        className="drawer-scroll"
         sx={{
           width: anchor === "top" || anchor === "bottom" ? "auto" : drawerWidth,
-
           flexShrink: 0,
           boxShadow: "none",
           "& .MuiDrawer-paper": {
@@ -106,6 +111,16 @@ export const MuiDrawer = ({ children }) => {
             boxSizing: "border-box",
             backgroundColor: "secondary.main",
             zIndex: 1100,
+          },
+          "& .MuiDrawer-paper::-webkit-scrollbar": {
+            width: "5px" /* Width of the entire scrollbar */,
+            backgroundColor: "#f3f3f3",
+          },
+          "& .MuiDrawer-paper::-webkit-scrollbar-thumb": {
+            width: "5px" /* Width of the Thumb scrollbar */,
+            backgroundColor: "#8a9b77",
+            height: "100px ",
+            borderRadius: "40px",
           },
         }}
         variant="persistent"
@@ -119,7 +134,7 @@ export const MuiDrawer = ({ children }) => {
       </Drawer>
 
       <Main open={open} matches={matches}>
-        {children}
+        <Outlet />
       </Main>
     </Box>
   );

@@ -37,3 +37,8 @@
     transform: rotate(360deg);
   }
 }
+
+/* .drawer-scroll::-webkit-scrollbar-thumb {
+  background: #000 !important;
+  width: 5px !important;
+} */
