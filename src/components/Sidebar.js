@@ -1,49 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import ListItemButton from "@mui/material/ListItemButton";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import WorkIcon from "@mui/icons-material/Work";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 
-const Sidebar = () => {
+import { styled, useTheme } from "@mui/material/styles";
+import { useDispatch, useSelector } from "react-redux";
+import { getGenres, setSelectedGenre } from "../state/movieSlice";
+
+const Sidebar = ({ handleDrawerClose, DrawerHeader }) => {
+  const [genresList, setGenres] = useState([]);
+  const dispatch = useDispatch();
+  const { genres } = useSelector((state) => state.movieSlice);
+  const theme = useTheme();
+
+  useEffect(() => {
+    dispatch(getGenres());
+  }, []);
+
+  useEffect(() => {
+    genres && setGenres(genres);
+  }, [genres]);
+
   return (
-    <Box
-      sx={{
-        width: 240,
-        height: "100vh",
-        backgroundColor: "primary.main",
-        color: "white",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        paddingTop: "64px", // Adjust to the height of your header
-      }}
-    >
+    <Box>
+      <DrawerHeader></DrawerHeader>
+      {/* <Divider /> */}
       <List>
-        <ListItem button>
-          <ListItemIcon>
-            <HomeIcon sx={{ color: "white" }} />
-          </ListItemIcon>
-          <ListItemText primary="Home" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <InfoIcon sx={{ color: "white" }} />
-          </ListItemIcon>
-          <ListItemText primary="About" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <WorkIcon sx={{ color: "white" }} />
-          </ListItemIcon>
-          <ListItemText primary="Services" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <ContactMailIcon sx={{ color: "white" }} />
-          </ListItemIcon>
-          <ListItemText primary="Contact" />
-        </ListItem>
+        {genresList &&
+          genresList?.map(({ name, id }, index) => (
+            <ListItem
+              onClick={() => {
+                dispatch(setSelectedGenre(id));
+                handleDrawerClose();
+              }}
+              sx={{
+                "&:hover & .MuiSvgIcon-root": {
+                  color: "primary.main",
+                },
+              }}
+              key={name}
+              disablePadding
+            >
+              <ListItemButton
+                sx={{
+                  textAlign: { xs: "center", md: "right" },
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                }}
+              >
+                {/* <ListItemIcon>
+                <MuiIcons />
+              </ListItemIcon> */}
+                <ListItemText
+                  sx={{ paddingRight: "20px", fontSize: "14px" }}
+                  primary={name}
+                />
+              </ListItemButton>
+            </ListItem>
+          ))}
       </List>
     </Box>
   );
